@@ -1,0 +1,361 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    /* Wallpaper ekleme ve üzerine koyu mavi-mor filtre çekme */
+    background: linear-gradient(rgba(11, 15, 25, 0.85), rgba(21, 13, 42, 0.85)), 
+                url('images/wallpaper.jpg') no-repeat center center fixed;
+    background-size: cover;
+
+    color: #e2e8f0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+.header {
+    background-color: #151821;
+    border-bottom: 2px solid #8b5cf6;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 18px 0;
+}
+
+/* Logo - Ortalanmış */
+.logo {
+    font-family: 'Syne', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #ffffff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1001;
+}
+
+.logo span {
+    color: #06b6d4;
+}
+
+/* Menü Linkleri */
+.nav-links {
+    margin-left: auto;
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 1002;
+}
+
+.nav-links a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #06b6d4;
+}
+
+/* MAIN */
+.main-content {
+    flex: 1;
+    padding: 35px 0;
+}
+
+/* BAŞLIK VE ARAMA ALANI */
+.controls-section {
+    text-align: center;
+    margin: 15px auto 35px auto;
+    max-width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.page-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    background: linear-gradient(90deg, #38bdf8 0%, #c084fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.page-subtitle {
+    color: #94a3b8;
+    font-size: 15px;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.search-wrapper {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-input {
+    width: 100%;
+    max-width: 420px;
+    padding: 10px 20px;
+    background-color: #1c202c;
+    border: 1px solid #334155;
+    border-radius: 25px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    border-color: #06b6d4;
+    box-shadow: 0 0 12px rgba(6, 182, 212, 0.3);
+}
+
+/* SANATÇI KARTLARI */
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 260px));
+    justify-content: center;
+    gap: 24px;
+}
+
+.artist-card {
+    background-color: #161922;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid #282f3f;
+    cursor: pointer;
+    transition: transform 0.3s, border-color 0.3s;
+    width: 100%;
+    max-width: 260px;
+}
+
+.artist-card:hover {
+    transform: translateY(-6px);
+    border-color: #8b5cf6;
+}
+
+.artist-card-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    background-color: #242b3b;
+}
+
+.artist-card-info {
+    padding: 16px;
+    text-align: center;
+}
+
+.artist-card-info h3 {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.artist-card-info span {
+    font-size: 12px;
+    color: #06b6d4;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* DETAY ALANI */
+.detail-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 25px;
+}
+
+.back-btn {
+    align-self: flex-start;
+    background-color: #242b3b;
+    color: #06b6d4;
+    border: 1px solid #334155;
+    padding: 8px 18px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.back-btn:hover {
+    background-color: #8b5cf6;
+    color: #ffffff;
+    border-color: #8b5cf6;
+}
+
+.selected-artist-banner {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: #161922;
+    border: 1px solid #282f3f;
+    padding: 16px 22px;
+    border-radius: 12px;
+}
+
+.banner-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #06b6d4;
+}
+
+.tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.track-card {
+    background-color: #161922;
+    border-radius: 10px;
+    padding: 16px;
+    border: 1px solid #282f3f;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.track-card h4 {
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+.track-card p {
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.spotify-player-wrapper {
+    margin-top: 10px;
+    width: 100%;
+}
+
+/* ETKİNLİKLER IZGARASI */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 340px));
+    justify-content: center;
+    gap: 24px;
+}
+
+.event-card {
+    background-color: #161922;
+    border: 1px solid #282f3f;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    border-color: #8b5cf6;
+}
+
+.event-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.event-card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-between;
+}
+
+.event-artist-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 12px;
+}
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 20px;
+}
+
+.event-details div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.event-price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #06b6d4;
+    margin-bottom: 15px;
+}
+
+.buy-ticket-btn {
+    background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+
+.buy-ticket-btn:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* FOOTER */
+.footer {
+    background-color: #151821;
+    border-top: 1px solid #282f3f;
+    padding: 20px 0;
+    text-align: center;
+    color: #64748b;
+    font-size: 13px;
+    margin-top: auto;
+}

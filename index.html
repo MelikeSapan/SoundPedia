@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundPedia | Müzik Ansiklopedisi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Righteous&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo" id="homeLogo">Sound<span>Pedia</span></a>
+            <!-- Menü Linkleri -->
+            <nav class="nav-links">
+                <a href="#" id="homeLink">Ana Sayfa</a>
+                <a href="#" id="eventsLink">Etkinlikler</a>
+                <a href="#" id="allSongsLink">Şarkılar</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-content">
+        
+        <!-- Başlık ve Arama Alanı -->
+        <section class="controls-section" id="heroSection">
+            <h1 class="page-title">Müzik Ansiklopedisi</h1>
+            <p class="page-subtitle">Sanatçıları, efsanevi grupları ve popüler şarkıları keşfedin</p>
+            
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="Grup veya sanatçı ara..." class="search-input">
+            </div>
+        </section>
+
+        <!-- Sanatçı / Grup Kartları Izgarası -->
+        <section class="artists-grid" id="artistsGrid">
+        </section>
+
+        <!-- Detay Bölümü (Şarkılar & Albümler) -->
+        <section class="detail-section" id="detailSection" style="display: none;">
+            <div class="detail-header">
+                <button class="back-btn" id="backToHomeBtn">&larr; Tüm Sanatçılara Dön</button>
+                <div class="selected-artist-banner" id="selectedArtistBanner"></div>
+            </div>
+            <div class="tracks-grid" id="tracksContainer"></div>
+        </section>
+
+        <!-- Tüm Şarkılar Bölümü -->
+        <section class="all-songs-section" id="allSongsSection" style="display: none;">
+            <div class="controls-section" style="margin-bottom: 25px;">
+                <h2 class="page-title" style="font-size: 32px;">Tüm Şarkılar</h2>
+                <p class="page-subtitle">Sitede yer alan tüm sanatçıların popüler parçaları</p>
+            </div>
+            <div class="tracks-grid" id="allSongsGrid"></div>
+        </section>
+
+        <!-- Etkinlikler Bölümü -->
+        <section class="events-section" id="eventsSection" style="display: none;">
+            <div class="controls-section" style="margin-bottom: 30px;">
+                <h2 class="page-title" style="font-size: 34px;">Yaklaşan Konserler & Turneler</h2>
+                <p class="page-subtitle">Sanatçıların canlı performansları için yerinizi ayırtın</p>
+            </div>
+            <div class="events-grid" id="eventsGrid"></div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 SoundPedia. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
